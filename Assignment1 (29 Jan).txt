@@ -1,0 +1,79 @@
+29th Jan Assignment
+--------------------
+
+Ans1-
+Guido van Rossum
+
+Ans2-
+Python supports Oops i.e Object Oriented programming.
+
+Ans3-
+Yes, python is case sensitive.
+
+Ans4-
+.py is the file extension of python file.
+
+Ans5-
+Python code is both compiled and interpreted because firstly the source code is first compiled to byte code and then byte code is executed by the interpreter.
+
+Ans6-
+Blocks of code are funnctions, class, loops etc.
+
+Ans7-
+The character used is # .
+
+Ans8-
+Functions to check python version are sys.version, python_version and Python-V command.
+
+Ans9-
+It's none other than lambda function.
+
+Ans10-
+pip stands for "preferred installer program" used to install and manage software packages written in Python.
+
+Ans11-
+Some of the built-in functions are 
+len() - used to fid the length of value,
+append()- used to add value,
+remove()- used to remove the value from list or any other suitable data type,
+pow()- used to find the power of given number.
+
+Ans12-
+Maximum length of an identifier is 79 caharacters.
+
+Ans13-
+Benefits are-
+
+1. used in performing data analysis
+2. used in system automation and administrations
+3. used in developing computer graphics.
+4. used in game developement
+5. used in security and penetration testing
+
+Ans14-
+-> Python has a private heap that contains all objects and data structures, this heap is managed by the Interpreter.
+-> It also has a memory manager that allocated heap space to objects and to use the memory space efficiently python provides tools to programmer to write 
+   reliable and robust programs.
+-> It also contains garbage collector that recycles the unused memory , if any object is no longer needed by program then the garbage 
+   collector free the space occupied by the object.
+
+Ans15-
+
+Installation-
+-> Open the official Python website in your web browser. Navigate to the Downloads tab for Windows.
+-> Choose the latest Python 3 release. In our example, we choose the latest Python 3.7.3 version.
+-> Click on the link to download Windows x86 executable installer if you are using a 32-bit installer. 
+   In case your Windows installation is a 64-bit system, then download Windows x86-64 executable installer.
+-> Now open the executable file and follow the steps as said. 
+
+The complete path of python.exe can be added by:
+-> Right-clicking This PC and going to Properties.
+-> Clicking on the Advanced system settings in the menu on the left.
+-> Clicking on the Environment Variables button o​n the bottom right.
+-> In the System variables section, selecting the Path variable and clicking on Edit. The next screen will show all the directories that are 
+   currently a part of the PATH variable.
+-> Clicking on New and entering Python’s install directory.
+
+Ans16-
+
+Yes, indentation is required.
