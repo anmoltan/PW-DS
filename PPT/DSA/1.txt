@@ -1,0 +1,191 @@
+
+Assignment Questions 1
+
+
+1.)
+
+def twoSum(nums, target):
+    if len(nums) <= 1:
+        return False
+    buff_dict = {}
+    for i in range(len(nums)):
+        if nums[i] in buff_dict:
+            return [buff_dict[nums[i]], i]
+        else:
+            buff_dict[target - nums[i]] = i
+            
+# Driver Code
+nums = [2,7,11,15]
+target = 9
+print(twoSum(nums, target))  # Output: [0, 1]
+
+---------------------------------------------------------------
+
+2.)
+
+def removeElement(nums, val):
+    k = 0  # Initialize the count of elements not equal to val
+    
+    for i in range(len(nums)):
+        if nums[i] != val:
+            nums[k] = nums[i]  # Move the element to the front
+            k += 1
+
+    return k
+
+nums = [3, 2, 2, 3]
+val = 3
+
+result = removeElement(nums, val)
+print("Output:", result)
+print("Modified nums:", nums[:result], "[_, _] (remaining elements are not important)")
+
+---------------------------------------------------------------------------------------------------
+
+3.)
+
+def searchInsert(nums, target):
+    left = 0
+    right = len(nums) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return left
+
+nums = [1, 3, 5, 6]
+target = 5
+
+result = searchInsert(nums, target)
+print("Output:", result)
+
+-------------------------------------------------------------------------------------------
+
+4.)
+
+def plusOne(digits):
+    n = len(digits)
+    
+    # Traverse the digits in reverse order
+    for i in range(n - 1, -1, -1):
+        if digits[i] != 9:
+            digits[i] += 1
+            return digits
+        else:
+            digits[i] = 0
+
+    # If all digits are 9, add an additional digit 1 at the beginning
+    return [1] + digits
+
+digits = [1, 2, 3]
+result = plusOne(digits)
+print("Output:", result)
+
+-----------------------------------------------------------------------------------
+
+5.)
+
+def merge(nums1, m, nums2, n):
+    # Initialize pointers for nums1, nums2, and the merged result
+    p1 = m - 1
+    p2 = n - 1
+    p = m + n - 1
+
+    # Merge nums1 and nums2 from the rightmost elements
+    while p1 >= 0 and p2 >= 0:
+        if nums1[p1] >= nums2[p2]:
+            nums1[p] = nums1[p1]
+            p1 -= 1
+        else:
+            nums1[p] = nums2[p2]
+            p2 -= 1
+        p -= 1
+
+    # Copy any remaining elements from nums2 to nums1 if there are any
+    nums1[:p2 + 1] = nums2[:p2 + 1]
+
+    return nums1
+
+nums1 = [1, 2, 3, 0, 0, 0]
+m = 3
+nums2 = [2, 5, 6]
+n = 3
+
+result = merge(nums1, m, nums2, n)
+print("Output:", result)
+
+-----------------------------------------------------------------------------------
+
+6.)
+
+def containsDuplicate(nums):
+    num_set = set()
+
+    for num in nums:
+        if num in num_set:
+            return True
+        num_set.add(num)
+
+    return False
+
+nums = [1, 2, 3, 1]
+result = containsDuplicate(nums)
+print("Output:", result)
+
+-------------------------------------------------------------------------------
+
+7.)
+
+def moveZeroes(nums):
+    non_zero_index = 0
+
+    # Move all nonzero elements to the front of the array
+    for num in nums:
+        if num != 0:
+            nums[non_zero_index] = num
+            non_zero_index += 1
+
+    # Fill the remaining elements with zeros
+    while non_zero_index < len(nums):
+        nums[non_zero_index] = 0
+        non_zero_index += 1
+
+    return nums
+
+nums = [0, 1, 0, 3, 12]
+result = moveZeroes(nums)
+print("Output:", result)
+
+---------------------------------------------------------------------
+
+8.)
+
+def findErrorNums(nums):
+    n = len(nums)
+    num_set = set()
+    duplicate = -1
+    missing = -1
+
+    # Find the duplicate and missing numbers
+    for num in nums:
+        if num in num_set:
+            duplicate = num
+        num_set.add(num)
+
+    for i in range(1, n + 1):
+        if i not in num_set:
+            missing = i
+            break
+
+    return [duplicate, missing]
+
+nums = [1, 2, 2, 4]
+result = findErrorNums(nums)
+print("Output:", result)
